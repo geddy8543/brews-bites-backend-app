@@ -36,6 +36,7 @@ class RecipesController < ApplicationController
     recipe.description = params["description"] || recipe.description
     recipe.ingredients = params["ingredients"] || recipe.ingredients
     recipe.instructions = params["instructions"] || recipe.instructions
+    recipe.image_url = params["image_url"] || recipe.image_url
 
     if recipe.save
       render json: recipe
