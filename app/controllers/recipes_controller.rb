@@ -1,4 +1,4 @@
-class RecipesController < ApplicationController
+git lass RecipesController < ApplicationController
   def index
     recipes = Recipe.all
     render json: recipes
@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
 
   def update
     recipe_id = params["id"]
-    recipe = Recipe.find_by(id: recipe)
+    recipe = Recipe.find_by(id: recipe_id)
 
     recipe.title = params["title"] || recipe.title
     recipe.description = params["description"] || recipe.description
