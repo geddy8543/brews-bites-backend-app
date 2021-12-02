@@ -1,4 +1,4 @@
-git lass RecipesController < ApplicationController
+class RecipesController < ApplicationController
   def index
     recipes = Recipe.all
     render json: recipes
