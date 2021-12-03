@@ -18,3 +18,27 @@ Content-Type: application/json
     "email": "test@test.com",
     "password": "password"
 }
+
+### Create users
+POST http://localhost:3000/users 
+Content-Type: application/json
+
+{
+    "full_name": "David Eddy",
+    "email": "david@test.com",
+    "password": "vwbug",
+    "password_confirmation": "vwbug"
+}
+
+### Creat user
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "full_name": "Fred Mutt",
+    "email": "fred@test.com",
+    "password": "woof",
+    "password_confirmation": "woof"
+
+}
