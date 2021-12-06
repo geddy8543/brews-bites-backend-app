@@ -3,8 +3,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "full_name": "Test Name",
-    "email": "test@test.com",
+    "full_name": "Meg",
+    "email": "meg@test.com",
     "password": "password",
     "password_confirmation": "password"
 }
@@ -15,30 +15,46 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-    "email": "test@test.com",
+    "email": "meg@test.com",
     "password": "password"
 }
 
-### Create users
-POST http://localhost:3000/users 
+
+### Get recipes request
+GET http://localhost:3000/recipes
+Content-Type: application/json
+
+### Get users request
+GET http://localhost:3000/users
+Content-Type: application/json
+
+### Get beers request
+
+GET http://localhost:3000/beers
+Content-Type: application/json
+
+### Create Recipe request
+
+POST http://localhost:3000/recipes
 Content-Type: application/json
 
 {
-    "full_name": "David Eddy",
-    "email": "david@test.com",
-    "password": "vwbug",
-    "password_confirmation": "vwbug"
+    "section_id": 2,
+    "title": "Pulled Pork Nachos",
+    "description": "Great nachos to have with football",
+    "ingredients": "8 oz thick tortilla chips (like El Milagro or El Ranchero brands), 6 oz smoked pork butt (shredded), 6 oz black beans or pinto beans (cooked and drained), 8 oz shredded chihuahua cheese, sliced jalapenos (pickled or fresh), sliced fresno chilies (opt), salsa and sour cream for serving",
+    "instructions": "Place tortilla chips on a jelly roll baking pan in a thick layer. Top with black beans and pulled pork, then top with peppers. Put a thick blanket of cheese on top. Bake in a 375 degree oven for 20 mins or until cheese is melted. Serve with salsa and sour cream.",
+    "image_url": "pexels-raizza-videña-1108775.jpg"
 }
 
-### Creat user
+### Create beer
 
-POST http://localhost:3000/users
+POST http://localhost:3000/beers 
 Content-Type: application/json
 
 {
-    "full_name": "Fred Mutt",
-    "email": "fred@test.com",
-    "password": "woof",
-    "password_confirmation": "woof"
-
+    "name": "Trappist Rochefort 10",
+    "style": "Belgian Quad",
+    "description": "A big, complex, fruity quad with a bit of cocoa flavor and a dry caramel aroma. Thick, boozy and filling.",
+    "image_url": "beer.png"
 }

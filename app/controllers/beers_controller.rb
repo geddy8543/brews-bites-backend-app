@@ -14,6 +14,7 @@ class BeersController < ApplicationController
       name: params["name"],
       style: params["style"],
       description: params["description"],
+      image_url: params["image_url"],
     )
     if beer.save
       render json: beer
