@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipe = Recipe.new(
+    recipe = Recipe.new (
       section_id: params["section_id"],
       title: params["title"],
       description: params["description"],
