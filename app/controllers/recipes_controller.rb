@@ -10,13 +10,13 @@ class RecipesController < ApplicationController
   end
 
   def create
-    recipe = Recipe.new (
+    recipe = Recipe.new(
       section_id: params["section_id"],
       title: params["title"],
       description: params["description"],
       ingredients: params["ingredients"],
       instructions: params["instructions"],
-      image_url: params["image_url"],
+      image_url: params["image_url"]
     )
     ### happy path
     if recipe.save

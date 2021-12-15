@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/recipes/:id" => "recipes#show" ##get single recipe by id
   get "/users" => "users#index" ##get all users
   get "/beers" => "beers#index"  ## get all beers
+  get "/beers/:id" => "beers#show"
 
 
   patch "/recipes" => "recipes#update" ## update existing recipe
