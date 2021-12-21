@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
     render json: recipe
   end
 
+
   def create
     recipe = Recipe.new(
       section_id: params["section_id"],
@@ -27,6 +28,7 @@ class RecipesController < ApplicationController
              status: 422
     end
   end
+
 
   def update
     recipe_id = params["id"]
