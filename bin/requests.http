@@ -39,7 +39,6 @@ POST http://localhost:3000/recipes
 Content-Type: application/json
 
 {
-    "section_id": 2,
     "title": "Pulled Pork Nachos",
     "description": "Great nachos to have with football",
     "ingredients": "8 oz thick tortilla chips (like El Milagro or El Ranchero brands), 6 oz smoked pork butt (shredded), 6 oz black beans or pinto beans (cooked and drained), 8 oz shredded chihuahua cheese, sliced jalapenos (pickled or fresh), sliced fresno chilies (opt), salsa and sour cream for serving",
