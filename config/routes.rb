@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
 
   patch "/recipes" => "recipes#update" ## update existing recipe
-  delete "/recipes" => "recipes#destroy" ## delete a recipe
+  delete "/recipes/:id" => "recipes#destroy" ## delete a recipe
+  delete "/beers/:id" => "beers#destroy" ## delete a beer
 end

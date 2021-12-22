@@ -57,3 +57,8 @@ Content-Type: application/json
     "description": "A big, complex, fruity quad with a bit of cocoa flavor and a dry caramel aroma. Thick, boozy and filling.",
     "image_url": "beer.png"
 }
+
+### Destroy Beer
+DELETE http://localhost:3000/beers/7
+
+
