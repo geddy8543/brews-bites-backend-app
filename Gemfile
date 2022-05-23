@@ -42,4 +42,4 @@ gem 'jwt'
 gem 'active_model_serializers', '~> 0.10.0'
 
 # Gems for Angular
-
+gem 'webpacker', '~> 4.3.x'
