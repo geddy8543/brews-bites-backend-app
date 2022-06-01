@@ -10,11 +10,12 @@ export interface Beer{
   providedIn: 'root'
 })
 export class BeerService {
+  private apiUrl = 'http://localhost:3000/beers';
 
   
   constructor(private http:HttpClient) {}
 
   getBeers(): Observable<Beer> {
-    return this.http.get<Beer>("http://localhost:3000/beers");
+    return this.http.get<Beer>(this.apiUrl);
   }
 }
