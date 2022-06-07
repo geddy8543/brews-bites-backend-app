@@ -8,8 +8,14 @@
             </h1>
             <!-- <h2>{{ message }}</h2> -->
             <div class="btns mt-6">
-              <!-- <RouterLink to="/recipes" class="btn-menu animated fadeInUp">Recipes Index</RouterLink>
-              <RouterLink to="/beers" class="btn-book animated fadeInUp">Beers Index</RouterLink> -->
+                <nav>
+                    <ul>
+                      <li><a routerLink="/beer" routerLinkActive="active" ariaCurrentWhenActive="page">Beers</a></li>
+                      <li><a routerLink="/recipe" routerLinkActive="active" ariaCurrentWhenActive="page">Recipes</a></li>
+                    </ul>
+                  </nav>
+                  <!-- The routed views render in the <router-outlet>-->
+                  <router-outlet></router-outlet>
               <a class="btn-menu animated fadeInUp" [routerLink]="'/recipes'">Component Library</a> |
             </div>
           </div>
