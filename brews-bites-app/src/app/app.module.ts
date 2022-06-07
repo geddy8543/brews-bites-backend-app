@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { BeerComponent } from './beer/beer.component';
 import { RecipeComponent } from './recipe/recipe.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     BeerComponent,
-    RecipeComponent
+    RecipeComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
