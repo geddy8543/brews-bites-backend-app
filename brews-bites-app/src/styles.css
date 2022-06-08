@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+h1 {
+  color: saddlebrown;
+}
+h2 {
+  color: saddlebrown;
+}
+img {
+  width: 250px;
+}
+.margin {
+  padding-top: 25%;
+  background-image: url("https://images.pexels.com/photos/10156907/pexels-photo-10156907.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-size: cover;
+  position: relative;
+}

@@ -8,6 +8,8 @@ import { UserComponent } from './user/user.component';
 import { BeerComponent } from './beer/beer.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { WelcomeComponent } from './welcome/welcome.component';
     UserComponent,
     BeerComponent,
     RecipeComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
