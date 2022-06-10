@@ -8,13 +8,14 @@ import { RecipeComponent } from './recipe/recipe.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UnauthenticatedComponent } from './unauthenticated/unauthenticated.component';
+import { AuthenticationGuard } from './authentication/authentication.guard';
 
 const routes: Routes = [
    { path: '', component: UnauthenticatedComponent },
-   { path: 'user', component: UserComponent},
-   { path: 'beer', component: BeerComponent},
-   { path: 'recipe', component: RecipeComponent},
-   { path: 'welcome', component: WelcomeComponent},
+   { path: 'user', canActivate: [AuthenticationGuard], component: UserComponent},
+   { path: 'beer', canActivate: [AuthenticationGuard], component: BeerComponent},
+   { path: 'recipe', canActivate: [AuthenticationGuard],component: RecipeComponent},
+   { path: 'welcome', canActivate: [AuthenticationGuard],component: WelcomeComponent},
    { path: 'login', component: LoginComponent},
    { path: 'signup', component: SignupComponent}
 

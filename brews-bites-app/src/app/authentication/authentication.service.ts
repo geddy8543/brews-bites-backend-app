@@ -28,4 +28,12 @@ export class AuthenticationService {
       })
     );
   }
+
+  isAuthenticated(): boolean {
+    return this.getToken() != null;
+  }
+
+  getToken(): string | null {
+    return sessionStorage.getItem('jwt');
+  }
 }

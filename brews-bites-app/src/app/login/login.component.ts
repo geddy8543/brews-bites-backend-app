@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.userParams).subscribe({
       next: (response) => {
         console.log(response);
-        this.router.navigateByUrl("/login");
+        this.router.navigateByUrl("/welcome");
       },
       error: (error) => {
         this.errors = error.response.data.errors;
