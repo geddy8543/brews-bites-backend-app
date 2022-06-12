@@ -8,17 +8,24 @@
                 <li *ngFor="let beer in beers; index as i; first as isFirst">{{i}}/{{ beer }}. {{beer}}</li>
               </ul>
             </div>
-  
+            
+            <div class='card-body'>
             <div class="row">
               <div class="col-lg-4 mt-4 mt-lg-0">
                 <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                  <!-- <router-link v-bind:to="`/beers/${beer.id}`"> -->
-                  <span>{{ beers }}</span>
-                  <!-- </router-link> -->
+                  
+                  <input type="text"
+                 [(ngModel)]="beerParams.beer"
+                 name="name"
+                 Beer.style="string"
+                 description="text"
+                 />
+
                   <h4>{{ beers }}</h4>
                   <p><a :href="'/beers/' + beer.id">More Info</a></p>
                 </div>
               </div>
+            </div>
               <div class="btns mt-4">
                 <a href="/beers/new" class="btn-menu animated fadeInUp scrollto">Add a Beer</a>
               </div>

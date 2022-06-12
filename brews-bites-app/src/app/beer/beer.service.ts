@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
 export interface Beer{
   id:number;
 }
@@ -19,3 +20,6 @@ export class BeerService {
     return this.http.get<Beer>(this.apiUrl);
   }
 }
+// make get request for 1 beer with id //
+// make post requests and delete requests//
+// put actions in beer component ts //

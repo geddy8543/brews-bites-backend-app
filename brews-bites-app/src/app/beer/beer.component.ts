@@ -1,6 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { BeerService } from './beer.service';
+
+export interface Beer {
+  beerId: "";
+  name: "";
+  style: "";
+  description: Text;
+}
+
 
 @Component({
   selector: 'app-beer',
@@ -10,23 +19,20 @@ import { BeerService } from './beer.service';
 export class BeerComponent implements OnInit {
   beerResponse: BehaviorSubject<any> = new BehaviorSubject({});
   beers: BehaviorSubject<any> = new BehaviorSubject([]);
+  sub: any;
+  beerParams: any;
   
-  constructor(private beerService: BeerService) { }
+  
+  constructor(private beerService: BeerService, private router: Router) { }
+
+  
 
   ngOnInit(): void {
-    this.onGetBeers();
+    this.sub = this.beerParams.getBeers().subscribe({
+      next: (beers: any) => beers,
+     
+    })
+    
   }
 
-  onGetBeers() {
-    this.beerService.getBeers().subscribe(
-      (response: any) => {
-        this.beerResponse.next(response);
-      },
-      (error: any) => console.log(error),
-      () => {
-        this.beers.next(this.beerResponse.value)
-        console.log(this.beerResponse.value)
-      }
-    )
-  }
 }
