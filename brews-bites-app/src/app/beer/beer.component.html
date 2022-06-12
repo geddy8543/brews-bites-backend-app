@@ -4,15 +4,18 @@
           <div class="container" data-aos="fade-up">
             <div class="section-title">
               <h1>The Beers</h1>
+              <ul>
+                <li *ngFor="let beer in beers; index as i; first as isFirst">{{i}}/{{ beer }}. {{beer}}</li>
+              </ul>
             </div>
   
             <div class="row">
-              <div class="col-lg-4 mt-4 mt-lg-0" v-for="beer in beers" :key="beer.id">
+              <div class="col-lg-4 mt-4 mt-lg-0">
                 <div class="box" data-aos="zoom-in" data-aos-delay="100">
                   <!-- <router-link v-bind:to="`/beers/${beer.id}`"> -->
-                  <span>{{ beers.name }}</span>
+                  <span>{{ beers }}</span>
                   <!-- </router-link> -->
-                  <h4>{{ beers.description }}</h4>
+                  <h4>{{ beers }}</h4>
                   <p><a :href="'/beers/' + beer.id">More Info</a></p>
                 </div>
               </div>
@@ -24,12 +27,5 @@
         </section>
         <!-- End Why Us Section -->
       
-      <!-- <h1>{{ message }}</h1>
-      <h2>All beers:</h2>
-      <div v-for="beer in beers" :key="beer.id">
-        <h3>{{ beer.name }}</h3>
-        <img :src="beer.image_url" :alt="beer.name" />
-        <p>Description: {{ beer.description }}</p>
-        <a :href="'/beers/' + beer.id">More Info</a>
-      </div> -->
+      
     
