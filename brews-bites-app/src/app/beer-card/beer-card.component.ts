@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Beer, BeerService } from '../beer/beer.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BeerService } from '../beer/beer.service';
+import { Beer } from '../beer/beer.component';
+
 
 @Component({
   selector: 'app-beer-card',
@@ -7,9 +10,10 @@ import { Beer, BeerService } from '../beer/beer.service';
   styleUrls: ['./beer-card.component.css']
 })
 export class BeerCardComponent implements OnInit {
-  beers: Beer[] = [];
+  pageTitle: string = 'Beer Details';
+  beer: Beer | undefined;
 
-  constructor(private beerService: BeerService) { }
+  constructor(private beerService: BeerService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.getBeers();
@@ -18,6 +22,9 @@ export class BeerCardComponent implements OnInit {
     // this.beerService.getBeers()
     // .subscribe(beers => this.beers = beers);
     console.log("get beers")
+  }
+  onBack(): void {
+    this.router.navigate(['/beer']);
   }
 
 }
