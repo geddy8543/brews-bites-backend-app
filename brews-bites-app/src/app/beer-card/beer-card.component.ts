@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { BeerService } from '../beer/beer.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { Beer } from '../beer/beer.component';
 
 
@@ -9,23 +7,9 @@ import { Beer } from '../beer/beer.component';
   templateUrl: './beer-card.component.html',
   styleUrls: ['./beer-card.component.css']
 })
-export class BeerCardComponent implements OnInit {
+export class BeerCardComponent  {
   pageTitle: string = 'Beer Details';
-  beer: Beer | undefined;
+  @Input() beer?: Beer;
   
-
-  constructor(private beerService: BeerService, private route: ActivatedRoute, private router: Router) { }
-
-  ngOnInit(): void {
-    this.getBeers();
-  }
-  getBeers(): void {
-    // this.beerService.getBeers()
-    // .subscribe(beers => this.beers = beers);
-    console.log("get beers")
-  }
-  onBack(): void {
-    this.router.navigate(['/beer']);
-  }
-
 }
+

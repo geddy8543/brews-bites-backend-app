@@ -4,33 +4,29 @@
           <div class="container" data-aos="fade-up">
             <div class="section-title">
               <h1>The Beers</h1>
-              <ul>
-                <li *ngFor="let beer in beers; index as i; first as isFirst">{{i}}/{{ beer }}. {{beer}}</li>
+              <ul *ngIf="selectedBeer == null">
+                <li *ngFor="let beer of beers">
+                  <div class='card-body'>
+                    <div class="row">
+                      <div class="col-lg-4 mt-4 mt-lg-0">
+                        <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                          <h4>{{ beer.name }}</h4>
+                          <p><button type="button" (click)="handleMoreInfoClick(beer)">More Info</button></p>
+                        </div>
+                      </div>
+                      </div>
+                  </div>
+                </li>
               </ul>
-            </div>
-            
-            <div class='card-body'>
-            <div class="row">
-              <div class="col-lg-4 mt-4 mt-lg-0">
-                <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                  
-                  <input type="text"
-                 [(ngModel)]="beerParams.beer"
-                 name="name"
-                 Beer.style="string"
-                 description="text"
-                 />
-
-                  <h4>{{ beers }}</h4>
-                  <p><a :href="'/beers/' + beer.id">More Info</a></p>
-                </div>
-              </div>
-            </div>
               <div class="btns mt-4">
                 <a href="/beers/new" class="btn-menu animated fadeInUp scrollto">Add a Beer</a>
               </div>
             </div>
-          </div>
+            </div>
+           <div *ngIf="selectedBeer != null">
+              <app-beer-card [beer]="selectedBeer"></app-beer-card>
+           </div>
+     
         </section>
         <!-- End Why Us Section -->
       

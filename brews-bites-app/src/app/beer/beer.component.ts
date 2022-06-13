@@ -8,7 +8,7 @@ export interface Beer {
   name: "";
   style: "";
   description: Text;
-  imageUrl: "";
+  image_url: "";
   recipePairing: number;
 }
 
@@ -20,9 +20,9 @@ export interface Beer {
 })
 export class BeerComponent implements OnInit {
   beerResponse: BehaviorSubject<any> = new BehaviorSubject({});
-  beers: BehaviorSubject<any> = new BehaviorSubject([]);
+  beers: Beer[]=[];
   sub: any;
-  beerParams: any;
+  selectedBeer: Beer | null = null;
   
   
   constructor(private beerService: BeerService, private router: Router) { }
@@ -30,11 +30,17 @@ export class BeerComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.sub = this.beerParams.getBeers().subscribe({
-      next: (beers: any) => beers,
+    this.sub = this.beerService.getBeers().subscribe({
+      next: (beers) => this.beers=beers,
      
     })
     
+  }
+
+  handleMoreInfoClick(beer: Beer) {
+   this.selectedBeer = beer;
+   console.log(this.selectedBeer)
+
   }
 
 }

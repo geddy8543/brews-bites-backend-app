@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Beer } from './beer.component';
 
-
-export interface Beer{
-  id:number;
-}
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +13,8 @@ export class BeerService {
   
   constructor(private http:HttpClient) {}
 
-  getBeers(): Observable<Beer> {
-    return this.http.get<Beer>(this.apiUrl);
+  getBeers(): Observable<Beer[]> {
+    return this.http.get<Beer[]>(this.apiUrl);
   }
 }
 // make get request for 1 beer with id //

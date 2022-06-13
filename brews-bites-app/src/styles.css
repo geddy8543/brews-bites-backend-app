@@ -425,7 +425,7 @@ body {
   --------------------------------------------------------------*/
   
   .hero-image {
-    background: url("/../img/beerandfood.jpg") top center;
+    background: url("assets/images/beerandfood.jpg") top center;
   }
   .welcome-image {
     background: url("https://images.pexels.com/photos/10156907/pexels-photo-10156907.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")

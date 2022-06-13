@@ -1,23 +1,23 @@
 <div class='card-body'>
     <div class='card-header'>
-      {{pageTitle + ': ' + beer?.beerName}}
+      {{pageTitle + ': ' + beer?.beerId}}
       <!-- <span class="white">Name:</span>
       <input type="text"
       [(ngModel)]="beerParams.beer"
       name="name"/> -->
       <div class="d-flex">
-        <img class="show-image" v-bind:src="beer.image_url" :alt="beer.name" />
+        <img class="show-image" [src]="beer?.image_url" :alt="beer.name" />
         <div class="d-flex flex-wrap flex-row flex-sm-column justify-content-between-show-content">
           <p>
             <span class="gold">Style:</span>
             <input type="text"
-                 [(ngModel)]="beerParams.beer"
+                 [value]="beer?.style"
                  Beer.style="string"/>
           </p>
           <p>
             <span class="gold">Description:</span>
             <input type="text"
-                 [(ngModel)]="beerParams.beer"
+                 [value]="beer?.description"
                  description="text"
                  />
           </p>
