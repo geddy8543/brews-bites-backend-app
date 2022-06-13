@@ -8,6 +8,8 @@ export interface Beer {
   name: "";
   style: "";
   description: Text;
+  imageUrl: "";
+  recipePairing: number;
 }
 
 

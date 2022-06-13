@@ -12,6 +12,7 @@ import { Beer } from '../beer/beer.component';
 export class BeerCardComponent implements OnInit {
   pageTitle: string = 'Beer Details';
   beer: Beer | undefined;
+  
 
   constructor(private beerService: BeerService, private route: ActivatedRoute, private router: Router) { }
 
