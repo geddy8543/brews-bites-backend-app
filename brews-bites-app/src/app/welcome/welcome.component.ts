@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BeerService } from '../beer/beer.service';
-import { Recipe, RecipeService } from '../recipe/recipe.service';
+import { RecipeService } from '../recipe/recipe.service';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { Recipe, RecipeService } from '../recipe/recipe.service';
 })
 export class WelcomeComponent implements OnInit {
   // beers: Beer[] = [];
-  recipes: Recipe[] = [];
+  // recipes: Recipe[] = [];
 
   constructor(private beerService: BeerService, recipeService: RecipeService) { }
 
