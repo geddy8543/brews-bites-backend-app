@@ -6,9 +6,10 @@ import { RecipeService } from './recipe.service';
 export interface Recipe {
   recipeId: "";
   title: "";
+  description: Text;
   ingredients: Text;
   instructions: Text;
-  imageUrl: "";
+  image_url: "";
   beerPairing: number;
 
 }
@@ -19,27 +20,21 @@ export interface Recipe {
 })
 export class RecipeComponent implements OnInit {
   recipeResponse: BehaviorSubject<any> = new BehaviorSubject([]);
-  recipes: BehaviorSubject<any> = new BehaviorSubject([]);
+  recipes: Recipe[]=[];
   sub: any;
-  recipeParams: any;
+  selectedRecipe: Recipe | null = null;
   
   constructor(private recipeService: RecipeService, private router: Router) { }
 
   ngOnInit(): void {
-    this.onGetRecipes();
+    this.sub = this.recipeService.getRecipes().subscribe({
+    next: (recipes) => this.recipes=recipes,  
+    })
   }
 
-  onGetRecipes() {
-    this.recipeService.getRecipes().subscribe(
-      (response: any) => {
-        this.recipeResponse.next(response);
-      },
-      (error: any) => console.log(error),
-      () => {
-        this.recipes.next(this.recipeResponse.value)
-        console.log(this.recipeResponse.value)
-      }
-    )
+  handleMoreInfoClick(recipe: Recipe) {
+    this.selectedRecipe = recipe;
+    console.log(this.selectedRecipe)
   }
 
 }

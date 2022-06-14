@@ -1,22 +1,28 @@
-<!-- <div class="container">
-    <div class="section-title">
-      <h1>{{ recipe.title }}</h1>
+<div class="container">
+    <div class='card-header'>
+      <h1>{{pageTitle + ': ' + recipe?.recipeId}}</h1>
       <div class="d-flex">
-        <img class="show-image" v-bind:src="recipe.image_url" :alt="recipe.title" />
+        <img class="show-image" [src]="recipe?.image_url" :alt="recipe.title" />
         <div class="d-flex flex-wrap flex-row flex-sm-column justify-content-between show-content">
           <p>
             <span class="gold">Description:</span>
-            {{ recipe.description }}
+            <input type="text"
+                [value]="recipe?.description"
+                Recipe.description="text"/>
           </p>
           <p>
             <span class="gold">Ingredients:</span>
-            {{ recipe.ingredients }}
+            <input type="text"
+            [value]="recipe?.ingredients"
+            description="text"/>
           </p>
           <p>
             <span class="gold">Instructions:</span>
-            {{ recipe.instructions }}
+            <input type="text"
+            [value]="recipe?.instructions"
+            description="text"/>
           </p>
         </div>  
       </div>
     </div>
-  </div> -->
+  </div>
