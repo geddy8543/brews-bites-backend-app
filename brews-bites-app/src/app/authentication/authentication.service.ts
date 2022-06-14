@@ -36,4 +36,9 @@ export class AuthenticationService {
   getToken(): string | null {
     return sessionStorage.getItem('jwt');
   }
+
+  clearSession() {
+    sessionStorage.removeItem("jwt");
+    sessionStorage.removeItem("user_id");
+  }
 }

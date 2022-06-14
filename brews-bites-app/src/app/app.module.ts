@@ -15,7 +15,8 @@ import { UnauthenticatedComponent } from './unauthenticated/unauthenticated.comp
 import { RequestInterceptor } from './authentication/interceptors/request.interceptor';
 import { BeerCardComponent } from './beer-card/beer-card.component';
 import { RecipeCardComponent } from './recipe-card/recipe-card.component';
-import { LogoutComponent } from './logout/logout.component';
+import { NewBeerComponent } from './new-beer/new-beer.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { LogoutComponent } from './logout/logout.component';
     UnauthenticatedComponent,
     BeerCardComponent,
     RecipeCardComponent,
-    LogoutComponent
+    NewBeerComponent,
   ],
   imports: [
     BrowserModule,

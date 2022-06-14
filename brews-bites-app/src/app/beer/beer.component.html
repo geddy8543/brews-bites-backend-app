@@ -25,6 +25,10 @@
             </div>
            <div *ngIf="selectedBeer != null">
               <app-beer-card [beer]="selectedBeer"></app-beer-card>
+              <button class="btn btn-outline-secondary"
+        style="width:80px"
+        (click)="onBack()">
+        <i class="fa fa-chevron-left"></i> Back to Beers </button>
            </div>
      
         </section>

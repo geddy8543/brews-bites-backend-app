@@ -43,4 +43,8 @@ export class BeerComponent implements OnInit {
 
   }
 
+  onBack(): void {
+    this.selectedBeer = null;
+  }    
+
 }
