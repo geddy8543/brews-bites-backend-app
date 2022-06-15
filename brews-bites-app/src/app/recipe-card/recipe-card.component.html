@@ -1,32 +1,22 @@
-<div class="container">
-    <div class='card-header'>
-      <h1>{{pageTitle + ': ' + recipe?.recipeId}}</h1>
+<div class='card-body'>
+    <div class='card-header d-flex flex-column'>
+      <div class="section-title"><h1>{{pageTitle + ': ' + recipe?.title}}</h1></div>
       <div class="d-flex">
-        <img class="show-image" [src]="recipe?.image_url" :alt="recipe.title" />
-        <div class="d-flex flex-wrap flex-row flex-sm-column justify-content-between show-content">
-          <p>
-            <span class="gold">Description:</span>
-            <input type="text"
-                [value]="recipe?.description"
-                Recipe.description="text"/>
-          </p>
-          <p>
-            <span class="gold">Ingredients:</span>
-            <input type="text"
-            [value]="recipe?.ingredients"
-            description="text"/>
-          </p>
-          <p>
-            <span class="gold">Instructions:</span>
-            <input type="text"
-            [value]="recipe?.instructions"
-            description="text"/>
-          </p>
+        <img class="show-image show-image-large" [src]="recipe?.image_url" :alt="recipe.title" />
+        <div class="d-flex flex-wrap flex-row flex-sm-column show-content">
+          <div>
+            <h3 class="gold">Description:</h3> 
+            <p>{{recipe?.description}}</p>     
+          </div>
+          <div>
+            <h3 class="gold">Ingredients:</h3> 
+            <p>{{recipe?.ingredients}}</p>     
+          </div>
+          <div>
+            <h3 class="gold">Instructions:</h3> 
+            <p>{{recipe?.instructions}}</p>     
+          </div>
         </div>  
       </div>
-      <button class="btn btn-outline-secondary"
-        style="width:80px"
-        (click)="onBack()">
-        <i class="fa fa-chevron-left"></i> Back to Recipes </button>
     </div>
   </div>

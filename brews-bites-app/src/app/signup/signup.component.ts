@@ -23,7 +23,9 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+/**
+ * This function posts to api/users and will redirect to login if no errors
+ */
   submit() {
     this.http.post<any>('/api/users', this.newUserParams).subscribe({
       next: (response) => {

@@ -7,12 +7,12 @@
     <nav id="navbar" class="navbar order-last order-lg-0">
       <ul>
         <!-- <li><a class="nav-link active" href="/">Home</a></li> -->
-        <li *ngIf="isNavbarLoggedIn()"><button type="button" class="btn btn-outline-primary book-a-table-btn" routerLink="/welcome" routerLinkActive="active" ariaCurrentWhenActive="page">Home</button>
+        <li *ngIf="isNavbarLoggedIn()"><a routerLink="/welcome" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
       </li>
-        <li *ngIf="isNavbarLoggedIn()"><button type="button" class="btn btn-outline-primary book-a-table-btn" routerLink="/recipe" routerLinkActive="active" ariaCurrentWhenActive="page">Recipes</button>
+        <li *ngIf="isNavbarLoggedIn()"><a routerLink="/recipe" routerLinkActive="active" ariaCurrentWhenActive="page">Recipes</a>
         </li>
       
-        <li *ngIf="isNavbarLoggedIn()"><button type="button" class="btn btn-outline-primary book-a-table-btn" routerLink="/beer" routerLinkActive="active" ariaCurrentWhenActive="page">Beers</button></li>
+        <li *ngIf="isNavbarLoggedIn()"><a routerLink="/beer" routerLinkActive="active" ariaCurrentWhenActive="page">Beers</a></li>
         <li *ngIf="isNavbarLoggedIn()">
           <a (click)="logout()" class="nav-link">Logout</a>
         </li>

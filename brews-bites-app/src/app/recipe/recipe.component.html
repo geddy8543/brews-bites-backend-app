@@ -2,35 +2,29 @@
 <section id="why-us" class="why-us">
   <div class="container" data-aos="fade-up">
     <div class="section-title">
-      <h1>The Recipes</h1>
-      <ul *ngIf="selectedRecipe == null">
-        <li *ngFor="let recipe of recipes">
-          <div class='card-body'>
-            <div class="row">
-              <div class="col-lg-4 mt-4 mt-lg-0">
-                <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                  <h4>{{ recipe.title }}</h4>
-                  <img class="show-image" [src]="recipe.image_url" :alt="recipe.title" />
-                  <p><button type="button" class="btn btn-outline-primary book-a-table-btn"    (click)="handleMoreInfoClick(recipe)">More Info</button></p>
-                </div>
-              </div>
-              </div>
+      <h1 *ngIf="selectedRecipe == null">The Recipes</h1>
+    </div>
+    <div *ngIf="selectedRecipe == null" class="d-flex flex-row align-items-start flex-wrap w-100">
+      <div *ngFor="let recipe of recipes">
+        <div class='card-body'>
+          <div class="box" data-aos="zoom-in" data-aos-delay="100">
+            <h4>{{ recipe.title }}</h4>
+            <img class="show-image" [src]="recipe.image_url" :alt="recipe.title" />
+            <div><button type="button" class="btn btn-outline-primary book-a-table-btn mt-4"    (click)="handleMoreInfoClick(recipe)">More Info</button></div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
       <div class="btns mt-4">
         <a href="/recipes/new" class="btn-menu animated fadeInUp scrollto">Add a Recipe</a>
       </div>
     </div>
-    </div>
-   <div *ngIf="selectedRecipe != null">
+      
+    <div *ngIf="selectedRecipe != null">
       <app-recipe-card [recipe]="selectedRecipe"></app-recipe-card>
-      <button class="btn btn-outline-secondary"
-style="width:80px"
-(click)="onBack()">
-<i class="fa fa-chevron-left"></i> Back to Recipe </button>
-   </div>
-
+      <button type="button" class="btn btn-outline-primary book-a-table-btn mt-5"
+(click)="onBack()"><i class="fa fa-chevron-left"></i> Back to Recipes </button>
+    </div>
+  </div>
 </section>
 <!-- End Why Us Section -->
 

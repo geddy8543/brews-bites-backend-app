@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { RecipeService } from './recipe.service';
 
 export interface Recipe {
-  recipeId: "";
+  id: "";
   title: "";
   description: Text;
   ingredients: Text;
