@@ -9,7 +9,12 @@ export class NewBeerComponent implements OnInit {
 
     @Output() submitNewBeer= new EventEmitter<any>();
 
+    addNewBeer(value: string) {
+      this.submitNewBeer.emit(value);
+    }
   constructor() { }
+
+  newBeerParams: NewBeerParams = { name: "", style: "", description: "", image_url: ""}
 
   ngOnInit(): void {
   }

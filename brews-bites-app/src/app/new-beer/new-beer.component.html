@@ -1,1 +1,54 @@
-<p>new-beer works!</p>
+<section id="Login" class="login">
+    <div class="container">
+      <div class="section-title">
+        <!--<form v-on:submit.prevent="submit()">-->
+        <form (ngSubmit)="submit()">
+          <h1>Add a Beer</h1>
+          <ul>
+            <!--<li v-for="error in errors" v-bind:key="error">{{ error }}</li>-->
+            <li *ngFor="let error of errors">{{ error }}</li>
+          </ul>
+  
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input
+              type="text"
+              [(ngModel)]="newBeerParams.name"
+              class="form-control"
+              name="name"
+              id="name"
+              placeholder="Name of Beer"
+            />
+            <div class="validate"></div>
+          </div>
+  
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input
+              type="text"
+              [(ngModel)]="newBeerParams.style"
+              class="form-control"
+              name="style"
+              id="style"
+              placeholder="Style of Beer"
+            />
+            <div class="validate"></div>
+          </div>
+  
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input
+              type="text"
+              [(ngModel)]="newBeerParams.description"
+              class="form-control"
+              name="description"
+              id="description"
+              placeholder="Description of Beer"
+            />
+            <div class="validate"></div>
+          </div>
+          <input type="submit" value="Submit" class="mt-3 opaque-button" />
+        </form>
+      </div>
+    </div>
+  </section>
+    
+    
+  

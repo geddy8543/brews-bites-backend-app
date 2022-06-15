@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from '../recipe/recipe.component';
 
 @Component({
-  selector: 'app-recipe-card',
+  selector: 'app-recipe-card[recipe]',
   templateUrl: './recipe-card.component.html',
   styleUrls: ['./recipe-card.component.css']
 })
