@@ -11,7 +11,8 @@
                       <div class="col-lg-4 mt-4 mt-lg-0">
                         <div class="box" data-aos="zoom-in" data-aos-delay="100">
                           <h4>{{ beer.name }}</h4>
-                          <p><button type="button" (click)="handleMoreInfoClick(beer)">More Info</button></p>
+                          <img class="show-image" [src]="beer.image_url" :alt="beer.name" />
+                          <p><button type="button" class="btn btn-outline-primary book-a-table-btn"    (click)="handleMoreInfoClick(beer)">More Info</button></p>
                         </div>
                       </div>
                       </div>

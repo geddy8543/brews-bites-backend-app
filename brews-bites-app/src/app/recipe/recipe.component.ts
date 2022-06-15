@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Router } from '@angular/router';
 import { RecipeService } from './recipe.service';
 
 export interface Recipe {
@@ -24,7 +23,7 @@ export class RecipeComponent implements OnInit {
   sub: any;
   selectedRecipe: Recipe | null = null;
   
-  constructor(private recipeService: RecipeService, private router: Router) { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
     this.sub = this.recipeService.getRecipes().subscribe({
@@ -36,5 +35,9 @@ export class RecipeComponent implements OnInit {
     this.selectedRecipe = recipe;
     console.log(this.selectedRecipe)
   }
+
+  onBack(): void {
+    this.selectedRecipe = null;
+  }    
 
 }
