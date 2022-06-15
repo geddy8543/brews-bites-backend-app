@@ -16,6 +16,7 @@
             <h3 class="gold">Instructions:</h3> 
             <p>{{recipe?.instructions}}</p>     
           </div>
+          <a routerLink="/beer/{{recipe.beers[0].id}}">Beer Pairing: {{ recipe.beers[0].name }}</a>
         </div>  
       </div>
     </div>

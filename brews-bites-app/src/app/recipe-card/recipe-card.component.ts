@@ -9,7 +9,7 @@ import { Recipe } from '../recipe/recipe.component';
 })
 export class RecipeCardComponent {
 pageTitle: string = 'Recipe Details';
-@Input() recipe?: Recipe;
+@Input() recipe!: Recipe;
 
 constructor(private route: ActivatedRoute,
   private router: Router) { }
