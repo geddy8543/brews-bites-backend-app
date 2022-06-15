@@ -3,12 +3,12 @@ import { BehaviorSubject } from 'rxjs';
 import { RecipeService } from './recipe.service';
 
 export interface Recipe {
-  id: "";
-  title: "";
-  description: Text;
-  ingredients: Text;
-  instructions: Text;
-  image_url: "";
+  id: number;
+  title: string;
+  description: string;
+  ingredients: string;
+  instructions: string;
+  image_url: string;
   beerPairing: number;
 
 }

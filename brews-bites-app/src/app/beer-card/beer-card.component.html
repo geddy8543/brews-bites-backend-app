@@ -1,24 +1,19 @@
 <div class='card-body'>
-    <div class='card-header'>
-      {{pageTitle + ': ' + beer?.beerId}}
-      <div class="d-flex">
-        <img class="show-image" [src]="beer?.image_url" :alt="beer.name" />
-        <div class="d-flex flex-wrap flex-row flex-sm-column justify-content-between-show-content">
-          <p>
-            <span class="gold">Style:</span>
-            <input type="text"
-                 [value]="beer?.style"
-                 Beer.style="string"/>
-          </p>
-          <p>
-            <span class="gold">Description:</span>
-            <input type="text"
-                 [value]="beer?.description"
-                 description="text"
-                 />
-          </p>
-          
+  <div class='card-header d-flex flex-column'>
+    <div class="section-title"><h1>{{pageTitle + ': ' + beer?.name}}</h1></div>
+    <div class="d-flex">
+      <img class="show-image show-image-large" [src]="beer.image_url" :alt="beer.title" />
+      <div class="d-flex flex-wrap flex-row flex-sm-column show-content">
+        <div>
+          <h3 class="gold">Style:</h3> 
+          <p>{{beer.style}}</p>     
         </div>
-      </div>
+        <div>
+          <h3 class="gold">Description:</h3> 
+          <p>{{beer.description}}</p>     
+        </div>
+        <a routerLink="/recipe/{{beer.recipes[0].id}}">Recipe Pairing: {{ beer.recipes[0].title }}</a>
+      </div>  
     </div>
   </div>
+</div>

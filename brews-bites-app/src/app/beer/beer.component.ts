@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
+import { Recipe } from '../recipe/recipe.component';
 import { BeerService } from './beer.service';
 
 export interface Beer {
-  beerId: "";
-  name: "";
-  style: "";
-  description: Text;
-  image_url: "";
-  recipePairing: number;
+  id: number;
+  name: string;
+  style: string;
+  description: string;
+  image_url: string;
+  recipes: Recipe[];
 }
 
 
@@ -18,23 +19,35 @@ export interface Beer {
   templateUrl: './beer.component.html',
   styleUrls: ['./beer.component.css']
 })
-export class BeerComponent implements OnInit {
+export class BeerComponent implements OnInit, OnDestroy {
+  // memory clean up
+  private unSubAll$ = new Subject<void>();
+
   beerResponse: BehaviorSubject<any> = new BehaviorSubject({});
-  beers: Beer[]=[];
-  sub: any;
+  beers: Beer[] = [];
   selectedBeer: Beer | null = null;
   
-  
-  constructor(private beerService: BeerService, private router: Router) { }
-
-  
+  constructor(private beerService: BeerService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.sub = this.beerService.getBeers().subscribe({
-      next: (beers) => this.beers=beers,
-     
-    })
-    
+    this.beerService.getBeers()
+    .pipe(takeUntil(this.unSubAll$))
+    .subscribe({
+      next: (res) => { 
+        this.beers = res;
+        this.route.params
+          .pipe(takeUntil(this.unSubAll$))
+          .subscribe((params) => {
+          const selectedBeerId: number = parseInt(params['id']);
+          this.selectedBeer = this.beers.find((beer) => beer.id === selectedBeerId) ?? null;
+        });
+      },
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.unSubAll$.next();
+    this.unSubAll$.complete();
   }
 
   handleMoreInfoClick(beer: Beer) {
@@ -44,7 +57,7 @@ export class BeerComponent implements OnInit {
   }
 
   onBack(): void {
-    this.selectedBeer = null;
+    this.router.navigateByUrl('/beer');
   }    
 
 }
