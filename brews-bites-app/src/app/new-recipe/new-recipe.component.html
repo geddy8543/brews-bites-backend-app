@@ -1,1 +1,57 @@
-<p>new-recipe works!</p>
+<section id="Login" class="login">
+    <div class="container">
+      <div class="section-title">
+        <form (ngSubmit)="addNewRecipe()">
+          <h1>Add a Recipe</h1>
+  
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input
+              type="text"
+              [(ngModel)]="newRecipeParams.title"
+              class="form-control"
+              name="title"
+              id="title"
+              placeholder="Title of Recipe"
+            />
+           </div>
+  
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input
+              type="text"
+              [(ngModel)]="newRecipeParams.description"
+              class="form-control"
+              name="description"
+              id="description"
+              placeholder="Description of Recipe"
+            />
+          </div>
+  
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input
+              type="text"
+              [(ngModel)]="newRecipeParams.ingredients"
+              class="form-control"
+              name="ingredients"
+              id="ingredients"
+              placeholder="Ingredients for Recipe"
+            />
+            </div>
+
+          <div class="col-lg-4 col-md-6 form-group mt-3">
+            <input
+              type="text"
+              [(ngModel)]="newRecipeParams.instructions"
+              class="form-control"
+              name="instructions"
+              id="instructions"
+              placeholder="Instructions for Recipe"
+            />  
+          </div>
+          <input type="submit" value="Submit" class="mt-3 opaque-button" />
+        </form>
+      </div>
+    </div>
+  </section>
+    
+    
+  

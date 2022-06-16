@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
+import { NewRecipe } from '../new-recipe/new-recipe.component';
 import { Beer } from '../beer/beer.component';
 import { RecipeService } from './recipe.service';
 
@@ -26,6 +27,7 @@ export class RecipeComponent implements OnInit {
   recipeResponse: BehaviorSubject<any> = new BehaviorSubject([]);
   recipes: Recipe[]=[];
   selectedRecipe: Recipe | null = null;
+  isAddingNewRecipe: boolean = false;
   
   constructor(private recipeService: RecipeService, private router: Router, private route: ActivatedRoute) { }
 
@@ -42,6 +44,13 @@ export class RecipeComponent implements OnInit {
           this.selectedRecipe = this.recipes.find((recipe) => recipe.id === selectedRecipeId) ?? null;
         });
       },
+    });
+  }
+
+  handleNewRecipeSubmit(newRecipe: NewRecipe) {
+    this.isAddingNewRecipe = false;
+    this.recipeService.postRecipes(newRecipe).subscribe((response) => {
+      this.recipes.push(response);
     });
   }
 
