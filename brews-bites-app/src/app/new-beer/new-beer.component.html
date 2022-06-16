@@ -2,12 +2,12 @@
     <div class="container">
       <div class="section-title">
         <!--<form v-on:submit.prevent="submit()">-->
-        <form (ngSubmit)="submit()">
+        <form (ngSubmit)="addNewBeer()">
           <h1>Add a Beer</h1>
-          <ul>
-            <!--<li v-for="error in errors" v-bind:key="error">{{ error }}</li>-->
+          <!-- <ul>
+            <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
             <li *ngFor="let error of errors">{{ error }}</li>
-          </ul>
+          </ul> -->
   
           <div class="col-lg-4 col-md-6 form-group mt-3">
             <input
@@ -18,7 +18,7 @@
               id="name"
               placeholder="Name of Beer"
             />
-            <div class="validate"></div>
+           
           </div>
   
           <div class="col-lg-4 col-md-6 form-group mt-3">
@@ -30,7 +30,7 @@
               id="style"
               placeholder="Style of Beer"
             />
-            <div class="validate"></div>
+           
           </div>
   
           <div class="col-lg-4 col-md-6 form-group mt-3">
@@ -42,7 +42,7 @@
               id="description"
               placeholder="Description of Beer"
             />
-            <div class="validate"></div>
+           
           </div>
           <input type="submit" value="Submit" class="mt-3 opaque-button" />
         </form>

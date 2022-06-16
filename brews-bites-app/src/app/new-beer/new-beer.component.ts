@@ -1,4 +1,11 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+ 
+export interface NewBeer {
+  name: string;
+  style: string;
+  description: string;
+  image_url: string
+}
 
 @Component({
   selector: 'app-new-beer',
@@ -6,17 +13,22 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./new-beer.component.css']
 })
 export class NewBeerComponent implements OnInit {
+  @Output() submitNewBeer= new EventEmitter<NewBeer>();
+  
+  newBeerParams: NewBeer = {
+    name: '',
+    style: '',
+    description: '',
+    image_url: '',
+  }
 
-    @Output() submitNewBeer= new EventEmitter<any>();
-
-    addNewBeer(value: string) {
-      this.submitNewBeer.emit(value);
-    }
   constructor() { }
 
-  newBeerParams: NewBeerParams = { name: "", style: "", description: "", image_url: ""}
-
   ngOnInit(): void {
+  }
+
+  addNewBeer() {
+    this.submitNewBeer.emit(this.newBeerParams);
   }
 
 }

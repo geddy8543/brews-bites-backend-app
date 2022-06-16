@@ -5,7 +5,7 @@
     <div class="section-title">
       <h1 *ngIf="selectedBeer == null">The Beers</h1>
     </div>
-    <div *ngIf="selectedBeer == null" class="d-flex flex-row align-items-start flex-wrap w-100">
+    <div *ngIf="selectedBeer == null && isAddingNewBeer === false" class="d-flex flex-row align-items-start flex-wrap w-100">
       <div *ngFor="let beer of beers">
         <div class='card-body'>
           <div class="box" data-aos="zoom-in" data-aos-delay="100">
@@ -16,14 +16,18 @@
         </div>
       </div>
       <div class="btns mt-4">
-        <a href="/beers/new" class="btn-menu animated fadeInUp scrollto">Add a Beer</a>
+        <button type="button" class="btn-menu animated fadeInUp scrollto" (click)="isAddingNewBeer = true">Add a Beer</button>
       </div>
     </div>
       
-    <div *ngIf="selectedBeer != null">
+    <div *ngIf="selectedBeer != null && isAddingNewBeer === false">
       <app-beer-card [beer]="selectedBeer"></app-beer-card>
       <button type="button" class="btn btn-outline-primary book-a-table-btn mt-5"
 (click)="onBack()"><i class="fa fa-chevron-left"></i> Back to Beers </button>
+    </div>
+
+    <div *ngIf="isAddingNewBeer === true">
+      <app-new-beer (submitNewBeer)="handleNewBeerSubmit($event)"></app-new-beer>
     </div>
   </div>
 </section>
