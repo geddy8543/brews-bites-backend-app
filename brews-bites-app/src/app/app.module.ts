@@ -16,6 +16,7 @@ import { RequestInterceptor } from './authentication/interceptors/request.interc
 import { BeerCardComponent } from './beer-card/beer-card.component';
 import { RecipeCardComponent } from './recipe-card/recipe-card.component';
 import { NewBeerComponent } from './new-beer/new-beer.component';
+import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { NewBeerComponent } from './new-beer/new-beer.component';
     BeerCardComponent,
     RecipeCardComponent,
     NewBeerComponent,
+    NewRecipeComponent,
   ],
   imports: [
     BrowserModule,
