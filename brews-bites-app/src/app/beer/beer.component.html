@@ -3,8 +3,10 @@
 <section id="why-us" class="why-us">
   <div class="container" data-aos="fade-up">
     <div class="section-title">
+      <!-- *ngIf will remove the selected beer element if it evaluates to false-->
       <h1 *ngIf="selectedBeer == null">The Beers</h1>
     </div>
+    <!-- if selected beer and add new beer are both false, it will display all beer cards-->
     <div *ngIf="selectedBeer == null && isAddingNewBeer === false" class="d-flex flex-row align-items-start flex-wrap w-100">
       <div *ngFor="let beer of beers">
         <div class='card-body'>

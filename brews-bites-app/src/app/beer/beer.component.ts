@@ -5,7 +5,7 @@ import { NewBeer } from '../new-beer/new-beer.component';
 import { Recipe } from '../recipe/recipe.component';
 import { BeerService } from './beer.service';
 
-
+// will export the beer params globally across the app
 export interface Beer {
   id: number;
   name: string;
