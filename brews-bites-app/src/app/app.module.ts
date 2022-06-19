@@ -1,3 +1,4 @@
+// root module of the app; contains all parts of the app that will be used
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -20,6 +21,7 @@ import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 
 
 @NgModule({
+  // all components that belong to the root module
   declarations: [
     AppComponent,
     UserComponent,
@@ -35,6 +37,7 @@ import { NewRecipeComponent } from './new-recipe/new-recipe.component';
     NewRecipeComponent,
   ],
   imports: [
+    // tells Angular about other modules needed for the app to function
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -42,10 +45,12 @@ import { NewRecipeComponent } from './new-recipe/new-recipe.component';
     FormsModule
   ],
   providers: [{
+    // services the app needs
     provide: HTTP_INTERCEPTORS,
     useClass: RequestInterceptor,
     multi: true,
   }],
+  // entry component that creates the components listed in the app component array
   bootstrap: [AppComponent]
 })
 export class AppModule { }
